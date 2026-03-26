@@ -87,7 +87,7 @@ const AboutOverview = () => {
               mb: 3
             }}
           >
-            I’m Fihliwe Klaas, a registered psychologist dedicated to creating a warm, supportive environment where children, teens, and young adults can explore their feelings and begin their healing journey.
+            My approach is rooted in empathy, patience, and cultural understanding... Meeting each person exactly where they are.
           </Typography>
 
           <Typography

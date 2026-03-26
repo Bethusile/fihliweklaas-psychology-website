@@ -59,7 +59,7 @@ const Footer = () => {
             A safe space for healing, growth, and self-discovery. Supporting children, teens, and young adults in South Africa.
           </Typography>
           <Typography sx={{ opacity: 0.6, fontSize: '0.75rem' }}>
-            Registered with the HPCSA
+            Registered with HPCSA and BHF 
           </Typography>
         </Box>
 
@@ -79,7 +79,7 @@ const Footer = () => {
             Quick Links
           </Typography>
           <Stack spacing={1.5}>
-            {['About', 'Services', 'FAQ', 'Resources', 'Contact'].map((text) => (
+            {['About', 'Services', 'FAQ', 'Blog', 'Contact'].map((text) => (
               <MuiLink
                 key={text}
                 component={Link}
