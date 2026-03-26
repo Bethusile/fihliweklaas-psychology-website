@@ -171,7 +171,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               color: '#B584B1',
               textDecoration: 'none',
               '&:hover': { color: 'white' },
