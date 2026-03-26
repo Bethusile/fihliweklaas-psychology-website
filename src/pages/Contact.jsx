@@ -1,95 +1,235 @@
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Box, Typography, TextField, MenuItem, Select, FormControl } from '@mui/material';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import PageHero from '../components/Pagehero';
+import heroImg from '../assets/pic-sitting4.jpeg';
+
+const contactItems = [
+  {
+    icon: <EmailOutlinedIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
+    label: 'Email',
+    value: 'fmklaas@gmail.com',
+  },
+  {
+    icon: <PhoneOutlinedIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
+    label: 'Call or Text',
+    value: '+27 (0) 63 156 7054',
+  },
+  {
+    icon: <WhatsAppIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
+    label: 'WhatsApp',
+    value: 'Send a message anytime',
+  },
+  {
+    icon: <LocationOnOutlinedIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
+    label: 'Location',
+    value: 'South Africa • In-person & Online',
+  },
+];
+
+const inputSx = {
+  bgcolor: '#F5F3F0',
+  borderRadius: '10px',
+  '& .MuiOutlinedInput-root': {
+    borderRadius: '10px',
+    fontSize: '0.875rem',
+    '& fieldset': { border: 'none' },
+  },
+  '& input, & textarea': {
+    color: '#1A1A1A',
+    '&::placeholder': { color: '#9CA3AF', opacity: 1 },
+  },
+};
 
 const Contact = () => {
   return (
-    <main className="pt-32 pb-24 px-6 bg-[#FDFBF9] min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[#2D4A31] font-semibold mb-4">
-            Get in Touch
-          </p>
-          <h1 className="text-5xl font-serif mb-6">Contact me</h1>
-          <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
-            I am here to help. Reach out to schedule a session or to ask any questions 
-            about the therapeutic process.
-          </p>
-        </div>
+    <Box>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Left Column: Contact Info & Map */}
-          <div className="space-y-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-[#B584B1]">
-                  <Mail size={18} />
-                  <h3 className="font-medium text-gray-900">Email</h3>
-                </div>
-                <p className="text-sm text-gray-500">hello@fihliweklaas.co.za</p>
-              </div>
+      {/* ── Page Hero Banner ── */}
+      <PageHero
+        label="Contact"
+        title="Get in Touch"
+        subtitle="Taking the first step towards support is courageous. Reach out in whatever way feels most comfortable for you."
+        image={heroImg}
+        imagePosition="center center"
+      />
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-[#B584B1]">
-                  <Phone size={18} />
-                  <h3 className="font-medium text-gray-900">Phone</h3>
-                </div>
-                <p className="text-sm text-gray-500">+27 (0) 00 000 0000</p>
-              </div>
+      {/* ── Main Content ── */}
+      <Box
+        component="section"
+        sx={{
+          bgcolor: '#FDFBF9',
+          px: { xs: 3, md: 6, lg: 10 },
+          py: { xs: 6, md: 9 },
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: '1050px',
+            mx: 'auto',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1.5fr' },
+            gap: { xs: 6, md: 6 },
+            alignItems: 'start',
+          }}
+        >
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-[#B584B1]">
-                  <MapPin size={18} />
-                  <h3 className="font-medium text-gray-900">Location</h3>
-                </div>
-                <p className="text-sm text-gray-500">Gqeberha / Mthatha</p>
-              </div>
+          {/* ── Left: Info ── */}
+          <Box>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: { xs: '1.8rem', md: '2rem' },
+                fontWeight: 400,
+                color: '#1A1A1A',
+                mb: 2,
+              }}
+            >
+              Get in Touch
+            </Typography>
+            <Typography sx={{ color: '#6B7280', fontSize: '0.9rem', lineHeight: 1.8, mb: 4 }}>
+              Whether you're ready to book a session or just want to ask a question, I'm here. There's no pressure — take your time.
+            </Typography>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-[#B584B1]">
-                  <MessageCircle size={18} />
-                  <h3 className="font-medium text-gray-900">WhatsApp</h3>
-                </div>
-                <p className="text-sm text-gray-500">Available for quick queries</p>
-              </div>
-            </div>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+              {contactItems.map((item) => (
+                <Box key={item.label} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <Box
+                    sx={{
+                      width: 38,
+                      height: 38,
+                      minWidth: 38,
+                      borderRadius: '10px',
+                      bgcolor: '#F5EFF5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontWeight: 600, fontSize: '0.875rem', color: '#1A1A1A' }}>
+                      {item.label}
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.825rem', color: '#6B7280' }}>
+                      {item.value}
+                    </Typography>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+          </Box>
 
-            {/* Simple Map Placeholder */}
-            <div className="w-full h-64 bg-gray-100 rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
-               {/* You can embed a Google Maps iframe here later */}
-               <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                 MAP VIEW (GQEBERHA / MTHATHA)
-               </div>
-            </div>
-          </div>
+          {/* ── Right: Form ── */}
+          <Box
+            sx={{
+              bgcolor: 'white',
+              borderRadius: '20px',
+              border: '1px solid #F0EBF0',
+              p: { xs: 3.5, md: 5 },
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: '1.3rem',
+                fontWeight: 400,
+                color: '#1A1A1A',
+                mb: 0.75,
+              }}
+            >
+              Send a Message
+            </Typography>
+            <Typography sx={{ color: '#9CA3AF', fontSize: '0.825rem', mb: 3.5 }}>
+              I'll get back to you as soon as possible.
+            </Typography>
 
-          {/* Right Column: Contact Form */}
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-50">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[11px] uppercase tracking-widest text-gray-400">Name</label>
-                  <input type="text" className="w-full border-b border-gray-200 py-2 focus:border-[#B584B1] outline-none transition-colors" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[11px] uppercase tracking-widest text-gray-400">Email</label>
-                  <input type="email" className="w-full border-b border-gray-200 py-2 focus:border-[#B584B1] outline-none transition-colors" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-[11px] uppercase tracking-widest text-gray-400">Subject</label>
-                <input type="text" className="w-full border-b border-gray-200 py-2 focus:border-[#B584B1] outline-none transition-colors" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[11px] uppercase tracking-widest text-gray-400">Message</label>
-                <textarea rows="4" className="w-full border-b border-gray-200 py-2 focus:border-[#B584B1] outline-none transition-colors resize-none"></textarea>
-              </div>
-              <button className="w-full bg-[#1A2C1D] text-white py-4 rounded-full hover:bg-[#243627] transition-colors mt-4">
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
+              {/* Name + Email */}
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
+                <Box>
+                  <Typography sx={{ fontSize: '0.75rem', color: '#6B7280', mb: 0.75 }}>Your Name</Typography>
+                  <TextField fullWidth placeholder="First name" size="small" sx={inputSx} />
+                </Box>
+                <Box>
+                  <Typography sx={{ fontSize: '0.75rem', color: '#6B7280', mb: 0.75 }}>Email</Typography>
+                  <TextField fullWidth placeholder="your@email.com" size="small" sx={inputSx} />
+                </Box>
+              </Box>
+
+              {/* Phone + Session Type */}
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
+                <Box>
+                  <Typography sx={{ fontSize: '0.75rem', color: '#6B7280', mb: 0.75 }}>Phone (optional)</Typography>
+                  <TextField fullWidth placeholder="+27..." size="small" sx={inputSx} />
+                </Box>
+                <Box>
+                  <Typography sx={{ fontSize: '0.75rem', color: '#6B7280', mb: 0.75 }}>Session Type</Typography>
+                  <FormControl fullWidth size="small">
+                    <Select
+                      defaultValue="in-person"
+                      sx={{
+                        bgcolor: '#F5F3F0',
+                        borderRadius: '10px',
+                        fontSize: '0.875rem',
+                        '& fieldset': { border: 'none' },
+                      }}
+                    >
+                      <MenuItem value="in-person">In-person</MenuItem>
+                      <MenuItem value="online">Online</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Box>
+
+              {/* Message */}
+              <Box>
+                <Typography sx={{ fontSize: '0.75rem', color: '#6B7280', mb: 0.75 }}>Your Message</Typography>
+                <TextField
+                  fullWidth
+                  multiline
+                  rows={4}
+                  placeholder="Tell me a little about what you're looking for..."
+                  sx={inputSx}
+                />
+              </Box>
+
+              {/* Submit */}
+              <Box
+                component="button"
+                type="submit"
+                sx={{
+                  width: '100%',
+                  bgcolor: '#B584B1',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50px',
+                  py: 1.8,
+                  fontSize: '0.9rem',
+                  fontWeight: 500,
+                  cursor: 'pointer',
+                  mt: 0.5,
+                  transition: 'background-color 0.2s ease',
+                  '&:hover': { bgcolor: '#9d6d9a' },
+                }}
+              >
                 Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </main>
+              </Box>
+
+              <Typography sx={{ textAlign: 'center', fontSize: '0.75rem', color: '#9CA3AF' }}>
+                Your information is completely confidential and secure.
+              </Typography>
+            </Box>
+          </Box>
+
+        </Box>
+      </Box>
+
+    </Box>
   );
 };
 
