@@ -1,111 +1,79 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500&display=swap');
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: #FDFBF9;
+  font-family: 'Inter', sans-serif;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+:root {
+  /* Brand Colors */
+  --bg-cream: #FDFBF9;
+  --brand-green: #1A2C1D;
+  --brand-purple: #B584B1;
+  --brand-green-light: #243627;
+  --text-main: #1A1A1A;
+  --text-muted: #6B7280;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+/* Elegant Headings */
+h1, h2, h3, .font-serif {
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
-  color: var(--text-h);
+  letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+/* Custom Component Styles */
+@layer components {
+  /* The "Pill" tags in the Benefits section */
+  .benefit-pill {
+    @apply bg-white border border-gray-100 py-6 px-8 rounded-full shadow-sm 
+           flex items-center gap-4 hover:shadow-md transition-all duration-300;
+  }
+
+  /* Standard Brand Button */
+  .btn-primary {
+    @apply bg-[#B584B1] text-white px-8 py-3 rounded-full 
+           hover:bg-[#A3739F] transition-all duration-300 shadow-sm;
+  }
+
+  /* Dark Section Inputs (Contact Form) */
+  .form-input {
+    @apply w-full border-b border-gray-200 py-2 focus:border-[#B584B1] 
+           outline-none transition-colors bg-transparent;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* Animations for Mobile Menu and FAQ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Smooth Scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar to match the brand */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E1DE;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-purple);
 }
