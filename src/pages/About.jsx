@@ -10,32 +10,11 @@ import heroImg from '../assets/pic-sitting4.jpeg';
 import approachImg from '../assets/pic-id-photo.jpeg';
 import spaceImg from '../assets/pic-sitting4.jpeg';
 
-const beliefs = [
-  {
-    icon: <FavoriteBorderIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
-    title: 'Creating Safety',
-    description: 'Therapy starts with feeling safe. I prioritise building trust and creating an environment where you can be yourself without judgement.',
-  },
-  {
-    icon: <ShieldOutlinedIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
-    title: 'Trauma-Informed Care',
-    description: 'I understand that many young people carry experiences that have shaped how they see themselves and the world. My approach is gentle, patient, and informed by the latest research on trauma.',
-  },
-  {
-    icon: <PeopleOutlineIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
-    title: 'Working With Young People',
-    description: "I'm passionate about supporting young minds during critical stages of development. Whether it's a child learning to express emotions or a young adult finding their identity.",
-  },
-  {
-    icon: <AutoAwesomeOutlinedIcon sx={{ fontSize: '1.1rem', color: '#B584B1' }} />,
-    title: 'Growth & Empowerment',
-    description: "My goal isn't to 'fix' anyone — it's to help you discover your own strength, resilience, and capacity for growth.",
-  },
-];
+
 
 const About = () => {
   return (
-    <Box>
+    <Box sx={{ overflowX: 'hidden' }}>
 
       {/* ── Page Hero Banner ── */}
       <PageHero
@@ -53,18 +32,20 @@ const About = () => {
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           bgcolor: '#FDFBF9',
-          position: 'relative',
+          overflow: 'hidden',
         }}
       >
         {/* Sticky Image — left half */}
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
-            height: { xs: '70vw', md: '100vh' },
+            maxWidth: { xs: '100%', md: '50%' },
+            height: { xs: '75vw', md: '100vh' },
             flexShrink: 0,
             position: { xs: 'relative', md: 'sticky' },
             top: { md: 0 },
             alignSelf: { md: 'flex-start' },
+            overflow: 'hidden',
           }}
         >
           <Box
@@ -85,13 +66,15 @@ const About = () => {
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
+            maxWidth: { xs: '100%', md: '50%' },
             display: 'flex',
             alignItems: 'flex-start',
             px: { xs: 4, md: 7, lg: 10 },
             py: { xs: 5, md: 8 },
+            boxSizing: 'border-box',
           }}
         >
-          <Box sx={{ maxWidth: '520px' }}>
+          <Box sx={{ maxWidth: '520px', width: '100%' }}>
             <Typography
               variant="h3"
               sx={{
@@ -106,57 +89,14 @@ const About = () => {
             </Typography>
 
             <Typography sx={{ color: '#6B7280', fontSize: '0.95rem', lineHeight: 1.8, mb: 2.5 }}>
-              I believe that everyone deserves to feel heard, understood, and supported. My approach to therapy is warm, collaborative, and deeply respectful of each person's unique journey.
-            </Typography>
+Hello, my name is Fihliwe Klaas, a Black African Counselling Psychologist based in the friendly city of Gqeberha in the Eastern Cape.            </Typography>
             <Typography sx={{ color: '#6B7280', fontSize: '0.95rem', lineHeight: 1.8, mb: 2.5 }}>
-              As a registered psychologist with the Health Professions Council of South Africa (HPCSA), I work primarily with children (7+), teenagers, and young adults — helping them navigate the complexities of growing up in today's world.
-            </Typography>
+I provide integrative therapeutic interventions to support individuals who are embarking on their journey of healing, personal growth, and transformation. My approach is grounded in empathy, honesty, and integrity, creating a safe and supportive space where every person’s experience is respected and valued.            </Typography>
             <Typography sx={{ color: '#6B7280', fontSize: '0.95rem', lineHeight: 1.8, mb: 4 }}>
-              Whether you're dealing with trauma, identity questions, anxiety, or simply seeking a space to explore your thoughts and feelings, I'm here to walk alongside you.
-            </Typography>
+My professional journey has been shaped by diverse experiences that deepened my understanding of people’s personal, social, and economic realities. Prior to becoming a psychologist, I worked in finance as a paraplanner, supporting financial advisors in helping individuals and families plan for their financial futures. This experience strengthened my understanding of the link between financial wellbeing, stress, life transitions, and mental health. I have also been involved in community engagement initiatives and worked as a student success coach, where I supported individuals from diverse backgrounds in navigating academic, personal, and life challenges while fostering resilience and self-awareness.            </Typography>
 
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: '1.25rem',
-                fontWeight: 400,
-                color: '#1A1A1A',
-                mb: 3,
-              }}
-            >
-              What I Believe In
-            </Typography>
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-              {beliefs.map((item) => (
-                <Box key={item.title} sx={{ display: 'flex', gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 36,
-                      height: 36,
-                      minWidth: 36,
-                      borderRadius: '10px',
-                      bgcolor: '#F5EFF5',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      mt: 0.3,
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
-                  <Box>
-                    <Typography sx={{ fontWeight: 600, fontSize: '0.9rem', color: '#1A1A1A', mb: 0.5 }}>
-                      {item.title}
-                    </Typography>
-                    <Typography sx={{ color: '#6B7280', fontSize: '0.875rem', lineHeight: 1.75 }}>
-                      {item.description}
-                    </Typography>
-                  </Box>
-                </Box>
-              ))}
-            </Box>
+            
+            
           </Box>
         </Box>
       </Box>
@@ -167,18 +107,20 @@ const About = () => {
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column-reverse', md: 'row' },
-          position: 'relative',
+          overflow: 'hidden',
         }}
       >
         {/* Dark text panel — left */}
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
+            maxWidth: { xs: '100%', md: '50%' },
             bgcolor: '#1A1A1A',
             display: 'flex',
             alignItems: 'center',
             px: { xs: 4, md: 7, lg: 10 },
             py: { xs: 5, md: 8 },
+            boxSizing: 'border-box',
           }}
         >
           <Box sx={{ maxWidth: '460px' }}>
@@ -195,11 +137,11 @@ const About = () => {
               A Space That Feels Like Home
             </Typography>
             <Typography sx={{ color: '#9CA3AF', fontSize: '0.9rem', lineHeight: 1.8, mb: 2 }}>
-              I've created a therapy space that feels warm, comfortable, and safe — nothing clinical or intimidating. Whether we meet in-person or online, the goal is the same: a calm environment where you can feel at ease.
-            </Typography>
+As a Xhosa woman who speaks isiXhosa, Sesotho, Venda, Setswana, Sepedi, isiZulu, and English, I deeply appreciate the diverse cultural, religious, and traditional contexts that shape people’s lives. This allows me to connect meaningfully with individuals from different backgrounds and better understand the challenges they may face.            </Typography>
             <Typography sx={{ color: '#9CA3AF', fontSize: '0.9rem', lineHeight: 1.8, mb: 3.5 }}>
-              Sessions are available both in-person in South Africa and online, so support is accessible no matter where you are.
-            </Typography>
+My journey into psychology was inspired by a strong desire to work in a profession that aligns with my core values and passion for helping others. I believe that every person deserves compassionate support on their path toward emotional wellbeing and personal growth.             </Typography>
+            <Typography sx={{ color: '#9CA3AF', fontSize: '0.9rem', lineHeight: 1.8, mb: 3.5 }}>
+                I look forward to meeting you and walking alongside you on your journey toward wellness.  </Typography>
             <MuiLink
               component={Link}
               to="/contact"
@@ -224,11 +166,13 @@ const About = () => {
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
-            height: { xs: '70vw', md: '100vh' },
+            maxWidth: { xs: '100%', md: '50%' },
+            height: { xs: '75vw', md: '100vh' },
             flexShrink: 0,
             position: { xs: 'relative', md: 'sticky' },
             top: { md: 0 },
             alignSelf: { md: 'flex-start' },
+            overflow: 'hidden',
           }}
         >
           <Box
