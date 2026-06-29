@@ -167,7 +167,7 @@ const Footer = () => {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <Typography sx={{ fontSize: '0.75rem' }}>Created by</Typography>
           <MuiLink
-            href="https://bethusile.co.za"
+            href="https://betana.co.za"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -177,7 +177,7 @@ const Footer = () => {
               '&:hover': { color: 'white' },
             }}
           >
-            Betana Tech
+            Betana
           </MuiLink>
         </Box>
       </Box>

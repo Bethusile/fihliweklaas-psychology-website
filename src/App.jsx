@@ -8,12 +8,14 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 const WHATSAPP_NUMBER = '27631567054'; 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
